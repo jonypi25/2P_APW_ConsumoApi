@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prueba de Script</title>
+</head>
+<body>
+  <h1 id="titulo">encabezado viejo</h1>
+  <p  id="intro"></p>
+  <p  id="intro">Este es un ejemplo </p>
+  <div id="main">  
+ 
+<p  class="intro">ejemplo</p>
+<p id="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odit harum placeat officia explicabo excepturi quasi eos totam magni at error eveniet fugit, veritatis similique, sapiente sequi voluptatibus, architecto repellat.</p>
+<p name="p">lore </p>
+<p name="p">lore </p>
+</div>
+<img id="miimagen" src="descarga.jpg" alt="Mi imagen">
+
+
+<form name="miformulario" onsubmit="return validarformulario()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre">
+  <input type="submit" value="Enviar">
+</form>
+
+
+<input type="text" id="numero" placeholder="Ingrese un número entre 1 y 10"> 
+ <button onclick="mifuncion()">Verificar</button>
+
+ <p id="demo"></p>
+<script>
+
+const element = document.getElementsByid("intro");
+
+const y = document.getElementsByClassName("intro");
+console.log(y);
+
+const elemento = document.getElementById("titulo"); elemento.innerHTML= "Nuevo encabezado";
+
+let introElement = document.getElementById("intro");
+console.log("Elemento con id='intro':", introElement);
+
+
+introElement.outerHTML = "<h2 id='intro'>Este es un nuevo párrafo con id='intro'.</h2>";
+
+let h1Element = document.querySelector("h1");
+h1Element.innerHTML = "Este es un nuevo título modificado con JavaScript.";
+
+
+document.getElementById("demo").innerHTML = "Mientras el corazón late, mientras el cuerpo y alma siguen juntos, no puedo admitir que cualquier criatura dotada de voluntad tiene necesidad de perder la esperanza en la vida (Viaje al centro de la tierra, Julio Verne).";
+
+        function mifuncion() {
+            let x = document.getElementById("numero").value;
+            let texto;
+            if (isNaN(x) || x < 1 || x > 10) {
+                texto = "Entrada no válida";
+            } else {
+                texto = "Entrada correcta";
+            }
+            document.getElementById("demo").innerHTML = texto;
+        }
+
+        function validarformulario()
+{
+  let y = document.forms["miformulario"]["nombre"].value;
+  if(y ===""){
+    alert("se debe compilar el nombre");
+    return false;
+  }
+}
+
+document.getElementById("miimagen").src = "descarga.jpg";
+
+document.getElementById("demo").innerHTML = "fecha: "+Date(); 
+
+
+</script>
+</body>
+</html>
+
